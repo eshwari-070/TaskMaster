@@ -1,0 +1,485 @@
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.hero {
+  position: relative;
+
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
+
+
+/* Progress Tracker */
+.progress-tracker {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.3s ease;
+}
+
+
+/* ===== COLORFUL TASKMASTER THEME ===== */
+
+:root {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #403653;
+  background: #fff5fa;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff0f6, #f0edff, #e7f8ff);
+}
+
+/* Main app container */
+#root {
+  min-height: 100vh;
+  padding: 45px 20px;
+}
+
+#root > div {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 18px 55px rgba(111, 83, 145, 0.14);
+}
+
+/* Heading */
+h1 {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  background: linear-gradient(90deg, #e45b9c, #9871e8, #5d9de8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#root > div > p {
+  margin: 8px 0 28px;
+  text-align: center;
+  color: #9483a8;
+  font-size: 1rem;
+}
+
+/* Inputs and dropdowns */
+input,
+select {
+  padding: 12px 14px;
+  margin: 5px 3px;
+  color: #514363;
+  background: #fffaff;
+  border: 1.5px solid #e8d9f5;
+  border-radius: 12px;
+  font: inherit;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus {
+  border-color: #bd8bea;
+  box-shadow: 0 0 0 4px #f2e7ff;
+}
+
+input::placeholder {
+  color: #b5a6c3;
+}
+
+/* Buttons */
+button {
+  padding: 10px 15px;
+  margin: 4px 3px;
+  border: none;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #b18aee, #8c79e8);
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(139, 110, 211, 0.17);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 15px rgba(139, 110, 211, 0.25);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Add task button */
+button[type="submit"] {
+  background: linear-gradient(135deg, #f08db8, #df65a0);
+}
+
+/* Task list */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+/* Individual task cards */
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 19px;
+  background: linear-gradient(120deg, #fff8fc, #f8f5ff);
+  border: 1px solid #eee2f8;
+  border-left: 5px solid #d7a4f3;
+  border-radius: 18px;
+  box-shadow: 0 5px 16px rgba(103, 78, 135, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(103, 78, 135, 0.12);
+}
+
+.task-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.task-info p {
+  flex-basis: 100%;
+  margin: 0 0 5px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.task-info p.completed {
+  color: #a79bb3;
+  text-decoration: line-through;
+}
+
+/* Priority and category labels */
+.priority,
+.category {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.priority {
+  color: #a45b28;
+  background: #fff0d8;
+}
+
+.category {
+  color: #7460bb;
+  background: #eee8ff;
+}
+
+/* Task buttons */
+.task-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  gap: 5px;
+}
+
+.task-actions button {
+  margin: 0;
+  padding: 9px 12px;
+  font-size: 0.82rem;
+}
+
+.complete-btn {
+  background: linear-gradient(135deg, #71cdb1, #42ad94);
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #f59aaa, #e66e87);
+}
+
+/* Progress tracker */
+.progress-tracker {
+  margin-top: 32px;
+  padding: 22px;
+  text-align: center;
+  background: linear-gradient(135deg, #fff0f7, #f0edff);
+  border: 1px solid #eee1fa;
+  border-radius: 20px;
+}
+
+.progress-tracker p {
+  margin: 0 0 15px;
+  color: #755c94;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* Progress bar background */
+.progress-bar {
+  width: 100%;
+  height: 15px;
+  background: #e5dff0;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+/* Colorful progress fill */
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #f08cba, #b185ef, #75cde0);
+  border-radius: 20px;
+  transition: width 0.4s ease;
+}
+
+/* Mobile-friendly layout */
+@media (max-width: 600px) {
+  #root {
+    padding: 18px 12px;
+  }
+
+  #root > div {
+    padding: 24px 16px;
+    border-radius: 22px;
+  }
+
+  .task-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .task-actions {
+    justify-content: flex-start;
+  }
+
+  input {
+    max-width: 100%;
+  }
+}
+
+
+/* Fix TaskMaster heading visibility */
+h1 {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 5px 0 10px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.25;
+  letter-spacing: -1px;
+  overflow: visible;
+  overflow-wrap: normal;
+  word-break: normal;
+}
